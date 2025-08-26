@@ -1,4 +1,3 @@
-/* style.css */
 /* Global styles */
 body {
     font-family: sans-serif;
@@ -22,7 +21,7 @@ h1, h2 {
 }
 
 main {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
     display: flex;
@@ -79,9 +78,14 @@ button:active {
     transform: scale(0.98);
 }
 
-#qr-code {
+#qr-code, #barcode-container {
     text-align: center;
     margin: 1rem 0;
+}
+
+#barcode {
+    display: block;
+    margin: 0 auto;
 }
 
 #video {

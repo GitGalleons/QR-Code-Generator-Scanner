@@ -1,28 +1,40 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR কোড অ্যাপ</title>
+    <title>QR কোড এবং বারকোড অ্যাপ</title>
     <link rel="stylesheet" href="style.css">
-    <!-- QR Code generation library (necessary for feature) -->
+    <!-- QR Code generation library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <!-- QR Code scanning library (necessary for feature) -->
+    <!-- Barcode generation library -->
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+    <!-- QR Code scanning library -->
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
 </head>
 <body>
     <header>
-        <h1>QR কোড জেনারেটর এবং স্ক্যানার</h1>
+        <h1>QR কোড এবং বারকোড জেনারেটর এবং স্ক্যানার</h1>
     </header>
     
     <main>
         <section id="generator">
             <h2>QR কোড জেনারেট করুন</h2>
             <input type="text" id="qr-input" placeholder="টেক্সট, URL বা অন্যান্য ডেটা লিখুন...">
-            <button id="generate-btn">QR কোড জেনারেট করুন</button>
+            <button id="generate-qr-btn">QR কোড জেনারেট করুন</button>
             <div id="qr-code"></div>
-            <button id="download-btn" style="display: none;">ডাউনলোড করুন</button>
+            <button id="download-qr-btn" style="display: none;">QR কোড ডাউনলোড করুন</button>
+        </section>
+        
+        <section id="barcode1">
+            <h2>বারকোড জেনারেট করুন</h2>
+            <input type="text" id="barcode-input" placeholder="বারকোডের জন্য টেক্সট লিখুন...">
+            <button id="generate-barcode-btn">বারকোড জেনারেট করুন</button>
+            <div id="barcode-container" class="CANVAS">
+                <canvas id="barcode2"></canvas>
+            </div>
+            <button id="download-barcode-btn" style="display: none;">বারকোড ডাউনলোড করুন</button>
         </section>
         
         <section id="scanner">
